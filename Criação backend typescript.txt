@@ -1,0 +1,6 @@
+Criar backend normal;
+yarn add @types/express -D => entender express;
+yarn add typescript -D;
+yarn tsc --init;
+Mudar a propriedade "target" em tsconfig.json de es5 pra es2017;
+yarn add ts-node-dev -D;
