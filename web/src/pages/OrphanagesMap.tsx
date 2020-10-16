@@ -9,6 +9,7 @@ import mapMarker from '../images/map-marker.svg'
 import '../styles/pages/orphanages-map.css'
 import api from '../services/api';
 import Orphanage from './Orphanage';
+import coordinates from '../utils/coordinates';
 
 interface Orphanage {
    id: number;
@@ -41,7 +42,7 @@ function OrphanagesMap() {
          </aside>
 
          <Map
-            center={[-29.5138362, -51.9673106]}
+            center={[coordinates.x, coordinates.y]}
             zoom={15}
             style={{ width: '100%', height: '100%'}}
          >

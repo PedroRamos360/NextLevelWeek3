@@ -10,6 +10,7 @@ import SideBar from '../components/SideBar';
 import '../styles/pages/create-orphanage.css';
 import api from "../services/api";
 import { useHistory } from "react-router-dom";
+import coordinates from '../utils/coordinates';
 
 export default function CreateOrphanage() {
    const history = useHistory();
@@ -81,7 +82,7 @@ export default function CreateOrphanage() {
                <legend>Dados</legend>
 
                <Map
-                  center={[-29.5170561,-51.9686006]}
+                  center={[coordinates.x, coordinates.y]}
                   style={{ width: '100%', height: 280 }}
                   zoom={15}
                   onClick={handleMapClick}
