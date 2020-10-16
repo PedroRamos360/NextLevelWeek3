@@ -19,6 +19,7 @@ export default function OrphanageData() {
    const [instructions, setInstructions] = useState('');
    const [opening_hours, setOpeningHours] = useState('');
    const [open_on_weekends, setOpenOnWeekends] = useState(true);
+   const [contact, setContact] = useState('');
    const [images, setImages] = useState<string[]>([]);
 
    const navigation = useNavigation();
@@ -36,6 +37,7 @@ export default function OrphanageData() {
       data.append('about', about);
       data.append('instructions', instructions);
       data.append('opening_hours', opening_hours);
+      data.append('contact', contact);
       data.append('open_on_weekends', String(open_on_weekends));
 
       images.forEach((image, index) => {
@@ -93,6 +95,9 @@ export default function OrphanageData() {
          <Text style={styles.label}>Whatsapp</Text>
          <TextInput
             style={styles.input}
+            value={contact}
+            onChangeText={setContact}
+            placeholder="Ex. 5551900000000"
          />
 
          <Text style={styles.label}>Fotos</Text>
@@ -110,7 +115,7 @@ export default function OrphanageData() {
          </View>
 
          <TouchableOpacity style={styles.imagesInput} onPress={handleSelectImages}>
-         <Feather name="plus" size={24} color="#15B6D6" />
+            <Feather name="plus" size={24} color="#15B6D6" />
          </TouchableOpacity>
 
          <Text style={styles.title}>Visitação</Text>

@@ -21,6 +21,7 @@ export default function CreateOrphanage() {
    const [instructions, setInstructions] = useState('');
    const [opening_hours, setOpeningHours] = useState('');
    const [open_on_weekends, setOpenOnWeekends] = useState(true);
+   const [contact, setContact] = useState('');
    const [images, setImages] = useState<File[]>([]);
    const [previewImages, setPreviewImages] = useState<string[]>([]);
 
@@ -59,6 +60,7 @@ export default function CreateOrphanage() {
       data.append('longitude', String(longitude));
       data.append('instructions', instructions);
       data.append('opening_hours', opening_hours);
+      data.append('contact', contact);
       data.append('open_on_weekends', String(open_on_weekends));
 
       images.forEach(image => {
@@ -98,17 +100,24 @@ export default function CreateOrphanage() {
                </Map>
 
                <div className="input-block">
-               <label htmlFor="name">Nome</label>
-               <input id="name" value={name} onChange={event => {
-                  setName(event.target.value);
-               }}/>
+                  <label htmlFor="name">Nome</label>
+                  <input id="name" value={name} onChange={event => {
+                     setName(event.target.value);
+                  }}/>
                </div>
 
                <div className="input-block">
-               <label htmlFor="about">Sobre <span>Máximo de 300 caracteres</span></label>
-               <textarea id="name" maxLength={300} value={about} onChange={event => {
-                  setAbout(event.target.value);
-               }} />
+                  <label htmlFor="about">Sobre <span>Máximo de 300 caracteres</span></label>
+                  <textarea id="name" maxLength={300} value={about} onChange={event => {
+                     setAbout(event.target.value);
+                  }} />
+               </div>
+
+               <div className="input-block">
+                  <label htmlFor="contact">Número</label>
+                  <input id="name" placeholder="Ex. 5551900000000" value={contact} onChange={event => {
+                     setContact(event.target.value);
+                  }}/>
                </div>
 
                <div className="input-block">
@@ -134,17 +143,17 @@ export default function CreateOrphanage() {
                <legend>Visitação</legend>
 
                <div className="input-block">
-               <label htmlFor="instructions">Instruções</label>
-               <textarea id="instructions" value={instructions} onChange={event => {
-                  setInstructions(event.target.value);
-               }} />
+                  <label htmlFor="instructions">Instruções</label>
+                  <textarea id="instructions" value={instructions} onChange={event => {
+                     setInstructions(event.target.value);
+                  }} />
                </div>
 
                <div className="input-block">
-               <label htmlFor="opening_hours">Horário de funcionamento</label>
-               <input id="opening_hours" value={opening_hours} onChange={event => {
-                  setOpeningHours(event.target.value);
-               }}/>
+                  <label htmlFor="opening_hours">Horário de funcionamento</label>
+                  <input id="opening_hours" value={opening_hours} onChange={event => {
+                     setOpeningHours(event.target.value);
+                  }}/>
                </div>
 
                <div className="input-block">

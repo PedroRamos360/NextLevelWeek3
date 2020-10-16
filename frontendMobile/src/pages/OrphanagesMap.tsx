@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
 
    calloutContainer: {
       width: 160,
-      height: 46,
+      minHeight: 46,
       paddingHorizontal: 16,
       backgroundColor: 'rgba(255, 255, 255, 0.8)',
       borderRadius: 16,

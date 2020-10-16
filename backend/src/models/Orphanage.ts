@@ -28,6 +28,9 @@ export default class Orphanage {
    @Column()
    open_on_weekends: boolean;
 
+   @Column()
+   contact: string;
+
    // Primeira função => tipo do retorno, segunda função => qual campo devolve o relacionamento inverso - orfanato
    @OneToMany(() => Image, image => image.orphanage, {
       cascade: ['insert', 'update']
